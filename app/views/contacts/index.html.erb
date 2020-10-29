@@ -4,26 +4,30 @@
 
 <table>
   <thead>
+    <div class="table-colspan">
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Kind</th>
-      <th>Rmk</th>
+      <th><%= Contact.human_attribute_name("name")%></th>
+      <th><%= Contact.human_attribute_name("email")%></th>
+      <th><%= Contact.human_attribute_name("kind")%></th>
+      <th><%= Contact.human_attribute_name("rmk")%></th>
       <th colspan="3"></th>
     </tr>
+    </div>
   </thead>
 
   <tbody>
     <% @contacts.each do |contact| %>
+    <div class="row">
       <tr>
         <td><%= contact.name %></td>
         <td><%= contact.email %></td>
-        <td><%= contact.kind %></td>
+        <td><%= contact.kind.description %></td>
         <td><%= contact.rmk %></td>
         <td><%= link_to 'Show', contact %></td>
         <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
         <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      </div>
     <% end %>
   </tbody>
 </table>

@@ -1,11 +1,15 @@
 source 'https://rubygems.org'
 
+ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
+#Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff
+gem 'rails-i18n', '~> 4.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'pg'
+gem 'faker'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
