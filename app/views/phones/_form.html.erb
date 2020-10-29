@@ -10,16 +10,21 @@
       </ul>
     </div>
   <% end %>
+<h1>Phone</h1>
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
 
   <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
+    <%= form.label :contact_id %>
+    <%= form.text_field :contact_id %>
   </div>
-  <div class="field">
-    <%= f.label :contact_id %><br>
-    <%= f.text_field :contact_id %>
-  </div>
+<br>
   <div class="actions">
-    <%= f.submit %>
+
+    <%= form.submit "Enviar", class: "button" %>
+    <%= link_to 'Back', phones_path,class: "button" %>
+
   </div>
 <% end %>

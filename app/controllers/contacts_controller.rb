@@ -17,12 +17,12 @@ class ContactsController < ApplicationController
   def new
     @contact = Contact.new
     @contact.build_address
-    @kind = Kind.all
+    options_for_select
   end
 
   # GET /contacts/1/edit
   def edit
-    get_dependencies
+    options_for_select
   end
 
   # POST /contacts
@@ -64,12 +64,12 @@ class ContactsController < ApplicationController
       format.json { head :no_content }
     end
   end
- def get_dependencies
-   @kind = Kind.all
 
- end
   private
     # Use callbacks to share common setup or constraints between actions.
+    def options_for_select
+      @kind_options_for_select =  Kind.all
+    end
     def set_contact
       @contact = Contact.find(params[:id])
     end
